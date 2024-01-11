@@ -52,3 +52,19 @@ const computedData = computed(()=>{
     return "liu"
 })
 ```
+
+## 通过使用 Ref 这个类型：
+```
+import { ref } from 'vue'
+import type { Ref } from 'vue'
+
+const year: Ref<string | number> = ref('2020')
+
+year.value = 2020 // 成功！
+```
+或者
+```
+const year= ref<string | number>('2020')
+
+year.value = 2020 // 成功！
+```
