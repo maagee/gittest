@@ -68,3 +68,23 @@ const year= ref<string | number>('2020')
 
 year.value = 2020 // 成功！
 ```
+
+# 绑定内联样式
+尽管推荐使用 camelCase，但 :style 也支持 kebab-cased 形式的 CSS 属性 key (对应其 CSS 中的实际名称)，例如：
+```
+const activeColor = ref('red')
+const fontSize = ref(30)
+
+//camelCase
+<div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+
+//kebab-cased
+<div :style="{ 'font-size': fontSize + 'px' }"></div>
+
+//直接绑定一个样式对象
+const fontStyle = {
+    fontSize:ref(30),
+    activeColor:ref('red')
+}
+<div :style = fontStyle></div>
+```

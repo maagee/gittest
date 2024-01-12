@@ -2,7 +2,7 @@
 import {ref,reactive,computed} from 'vue'
 import Header from './Header.vue'
 const isActive = true
-const head = [{'active':isActive},'back']
+const head = [{'active':isActive},'topbar']
 const header = ref('header')
 </script>
 
@@ -13,10 +13,14 @@ const header = ref('header')
   </div>
 </template>
 <style>
+*{margin:0;}
 .active{
-  width: 100px;height: 100px;background-color: gray;
+  background-color: black;
 }
 .header{
-  background-color: black;
+  background-color:cadetblue;
+}
+.topbar{
+  height: 30px;
 }
 </style>
