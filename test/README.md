@@ -68,6 +68,7 @@ const year= ref<string | number>('2020')
 
 year.value = 2020 // 成功！
 ```
+<<<<<<< HEAD
 
 # 绑定内联样式
 尽管推荐使用 camelCase，但 :style 也支持 kebab-cased 形式的 CSS 属性 key (对应其 CSS 中的实际名称)，例如：
@@ -88,3 +89,6 @@ const fontStyle = {
 }
 <div :style = fontStyle></div>
 ```
+=======
+202401112350
+>>>>>>> origin/main
