@@ -20,11 +20,27 @@ const myFontSize = computed(()=>{
     return btnStyle.value
 })
 const btn = ref('btn')
+
+const list = reactive(['1','2','3','4'])
+const _list = computed(()=>{
+    return list.filter(list=>list%2==0)
+})
+const plusClick = ()=>{
+    let index = list.length+1
+    list.push(index)
+    return list
+}
 </script>
 
 <template>
     <header class="bold f30" :style="fontStyle2" :class="$attrs.class" >Header</header>
     <button @click="bindClick" :style="{fontSize:myFontSize+'px'}">点击我+1放大：{{ count }}</button>
+    <ul>
+        <template v-for="item in _list">
+            <li>{{ item }}</li>
+        </template>
+    </ul>
+    <button style="font-size:20px" @click="plusClick">增加li偶数行</button>
 </template>
 
 <style>
