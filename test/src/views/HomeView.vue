@@ -1,26 +1,25 @@
 <script setup>
-import {ref,reactive,computed} from 'vue'
+import {ref} from 'vue'
 import Header from './Header.vue'
-const isActive = true
-const head = [{'active':isActive},'topbar']
-const header = ref('header')
+import Son from './Son.vue'
+const flag = ref(true)
+
 </script>
 
 <template>
   <div>
-    <p :class="head"></p>
-    <Header :class="header"></Header>
+    <Header class="header">Header</Header>
+    <button @click="flag = !flag">moutend</button>
+    <Son v-if="flag"> I'm son component</Son>
   </div>
 </template>
 <style>
 *{margin:0;}
-.active{
-  background-color: black;
-}
 .header{
+  height: 50px;
   background-color:cadetblue;
+  color:white;
+  font-size: 20px;
 }
-.topbar{
-  height: 30px;
-}
+
 </style>
