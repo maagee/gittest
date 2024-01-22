@@ -4,8 +4,6 @@ import {ref,reactive,computed} from "vue"
 
 <template>
     <header class="bold f30">Header</header>
-
-    
 </template>
 
 <style>
