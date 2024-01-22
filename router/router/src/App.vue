@@ -4,7 +4,7 @@ import {ref} from "vue"
 </script>
 
 <template>
-<h3>router</h3>
+<h3>footer</h3>
 
 <router-view></router-view>
 </template>
