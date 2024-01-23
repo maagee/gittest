@@ -1,18 +1,23 @@
 import { createRouter,createWebHistory } from 'vue-router'
 const routes = [
     {
-        path:'/user',
+        path:'/',
         component:(()=>import('../components/Footer.vue')),
         children:[
         {
-            path:'',
-            name:'login',
-            component:(()=>import('../components/Login.vue'))
-        },{
-            path:'reg',
-            name:'reg',
-            component:(()=>import('../components/Reg.vue'))
-        },{
+            path:'/',
+            components:{
+                default:()=>import('../components/Login.vue')
+            }
+        },
+        {
+            path:'/login',
+            components:{
+                listone:()=>import('../components/ListOne.vue'),
+                listtwo:()=>import('../components/ListTwo.vue')
+            }
+        },
+        {
             path:'detail/:id',
             name:'detail',
             component:(()=>import('../components/Detail.vue'))
