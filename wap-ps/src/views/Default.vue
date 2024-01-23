@@ -19,7 +19,7 @@ const showBrand = (id)=>{
 
     <nav class="left_nav">
         <ul>
-            <NavLeft @show-brand="(id)=>{showBrand(id)}" :id="item" v-for="item in navList">{{ item }}</NavLeft>
+            <NavLeft @show-brand="showBrand" :id="item" v-for="item in navList">{{ item }}</NavLeft>
         </ul>
     </nav>
     <section class="right_section">

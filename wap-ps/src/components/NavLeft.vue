@@ -4,7 +4,7 @@ const props = defineProps(['id'])
 </script>
 
 <template>
-    <li @click="$emit('show-Brand',props.id)">
+    <li @click="$emit('show-brand',props.id)">
         <em class="nav_li">
             <slot></slot>
         </em>
