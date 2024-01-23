@@ -1,14 +1,12 @@
 <script setup>
 import {ref} from "vue"
-
+let count = ref(0)
 </script>
 
 <template>
-<h3>footer</h3>
-
-<router-view></router-view>
+    <button @click="count++">点我 {{ count }}</button>
 </template>
 
 <style scoped>
-button{margin-left:20px}
+
 </style>

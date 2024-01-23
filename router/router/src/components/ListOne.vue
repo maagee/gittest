@@ -1,14 +1,14 @@
 <script setup>
 import {ref} from "vue"
-
 </script>
 
 <template>
-<h3>footer</h3>
-
-<router-view></router-view>
+    <h3>listOne</h3>
+    <ul>
+        <li>ListOne</li>
+    </ul>
 </template>
 
 <style scoped>
-button{margin-left:20px}
+
 </style>
