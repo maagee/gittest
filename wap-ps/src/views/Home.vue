@@ -4,7 +4,10 @@ import {ref} from "vue"
 
 <template>
     <div style="padding-bottom:55px">
-        <router-view></router-view>
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
+        
         <router-view name="about"></router-view>
         <router-view name="list"></router-view>
     </div>
