@@ -5,8 +5,9 @@ const props = defineProps(['id'])
 
 <template>
     <li @click="$emit('show-brand',props.id)">
-        <em class="nav_li">
+        <em class="nav_li" >
             <slot></slot>
+            <slot name="li" title="T"></slot>
         </em>
     </li>
 </template>

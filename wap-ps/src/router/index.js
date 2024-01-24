@@ -18,7 +18,7 @@ const routes = [
             path: '/about',
             name: 'About',
             components: {
-                default:() => import ('../views/About.vue'),
+                about:() => import ('../views/About.vue'),
                 list:() => import ('../views/List.vue')
             },
         },

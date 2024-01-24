@@ -4,12 +4,17 @@ import {ref} from "vue"
 
 <template>
     <div style="padding-bottom:55px">
-        <keep-alive>
-            <router-view></router-view>
-        </keep-alive>
-        
-        <router-view name="about"></router-view>
-        <router-view name="list"></router-view>
+        <router-view  v-slot="{ Component }">
+            <keep-alive :include="/Pic|Default/">
+                <component :is="Component" />
+            </keep-alive>
+        </router-view>
+        <router-view  name="about" v-slot="{ Component }">
+            <keep-alive>
+                <component :is="Component" />
+            </keep-alive>
+        </router-view>
+        <router-view  name="list" ></router-view>
     </div>
 
     <footer class="footer">

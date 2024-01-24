@@ -2,6 +2,7 @@
 import {ref,computed} from "vue"
 import Header from "../components/Header.vue"
 import NavLeft from "../components/NavLeft.vue"
+import BrandHeader from "../components/BrandHeader.vue";
 const brandId = ref('brandId')
 const navList = computed(()=>{
     const brand = ['Rolex','Mido','Cartier','Rado','Tidor','Blancpain','Breguet','PIAGET','IWC','ZENITH','Chopard','BVLGARI']
@@ -19,11 +20,29 @@ const showBrand = (id)=>{
 
     <nav class="left_nav">
         <ul>
-            <NavLeft @show-brand="showBrand" :id="item" v-for="item in navList">{{ item }}</NavLeft>
+            <NavLeft @show-brand="showBrand" :id="item" v-for="item in navList">
+                <template #li="{title}" :item="item">
+                    <div>
+                        {{ item }}+{{ title }}
+                    </div>
+                </template>
+                <template>
+                    <div>
+                        <img style="width:20px" src="../assets/image.svg" alt="">
+                    </div>
+                </template>
+            </NavLeft>
         </ul>
     </nav>
     <section class="right_section">
-        <p>{{ brandId }}</p>
+        
+        <BrandHeader>
+            <template v-slot:header>
+                <div>img</div>
+            </template>
+            <p>{{ brandId }}</p>
+        </BrandHeader>
+
     </section>
 </template>
 
@@ -34,5 +53,5 @@ const showBrand = (id)=>{
   background-color:darkgray;
 }
 .left_nav ul { display: flex; flex-direction: column;}
-.right_section { margin-left:65px; background-color: white; display: flex; align-items: center;}
+.right_section { margin-left:65px; background-color: white;}
 </style>
